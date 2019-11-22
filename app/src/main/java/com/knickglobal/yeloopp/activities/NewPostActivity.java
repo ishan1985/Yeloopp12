@@ -7,10 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -64,7 +67,7 @@ import okhttp3.RequestBody;
 
 public class NewPostActivity extends AppCompatActivity implements View.OnClickListener, GetFriendsView, PostView {
 
-    private static final String TAG = "Beant NewPostActivity";
+//    private static final String TAG = "Beant NewPostActivity";
 
     public static final int REQUEST_ADDRESS = 10001;
 
@@ -79,24 +82,19 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     private EditText locationPlaceET, privacySettings;
     private RelativeLayout viewScreen;
     private ImageView imageBG;
-    private RecyclerView imagesBgRC;
     private TextView tagPerson;
-    private Switch allowCommentSwitch, allowShareSwitch, allowSaveSwitch;
 
-    private File folder;
-    private File imageWithBgPath = null;
+    private File imageWithBgFile = null;
 
     private int[] arrImages = {R.drawable.background_white_and_food, R.drawable.background_blocks};
     boolean success = true;
 
-    private MultipartBody.Part text_bg_image, post_video;
     private MultipartBody.Part[] post_images = new MultipartBody.Part[2];
     private MultipartBody.Part[] post_imagesPart = new MultipartBody.Part[2];
 
-    private String post_location = "", post_tag_people = "", privacyType = "public", allowCommentS = "yes",
-            allowShareS = "yes", allowSaveS = "yes", post_title = "", post_caption = "",
-            post_type = "";
-    private int height = 1, width = 1;
+    private String post_location = "", post_tag_people = "", privacyType = "public", post_type = "",
+            allowCommentS = "yes", allowShareS = "yes", allowSaveS = "yes", imageBgPath = "";
+    private int height = 1;
 
     private CustomProgressDialog dialog;
     private GetFriendsPresenter presenter;
@@ -182,14 +180,14 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         viewScreen = findViewById(R.id.viewScreen);
         imageBG = findViewById(R.id.imageBG);
 
-        imagesBgRC = findViewById(R.id.imagesBgRC);
+        RecyclerView imagesBgRC = findViewById(R.id.imagesBgRC);
         imagesBgRC.setLayoutManager(new LinearLayoutManager(activity,
                 LinearLayoutManager.HORIZONTAL, false));
         imagesBgRC.setAdapter(new BackgroundsAdapter(activity, arrImages,
                 new BackgroundsAdapter.SelectBgListener() {
                     @Override
                     public void onPositionSelected(int position) {
-                        imageBG.setBackgroundResource(arrImages[position]);
+                        imageBG.setImageResource(arrImages[position]);
                     }
                 }));
 
@@ -220,9 +218,9 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         Button postBtn = findViewById(R.id.postBtn);
         postBtn.setOnClickListener(this);
 
-        allowCommentSwitch = findViewById(R.id.allowCommentSwitch);
-        allowShareSwitch = findViewById(R.id.allowShareSwitch);
-        allowSaveSwitch = findViewById(R.id.allowSaveSwitch);
+        Switch allowCommentSwitch = findViewById(R.id.allowCommentSwitch);
+        Switch allowShareSwitch = findViewById(R.id.allowShareSwitch);
+        Switch allowSaveSwitch = findViewById(R.id.allowSaveSwitch);
 
         allowCommentSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -255,9 +253,6 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-//        friendsListRC = findViewById(R.id.friendsListRC);
-//        friendsListRC.setLayoutManager(new LinearLayoutManager(activity));
-
         ImageView selectVideo = findViewById(R.id.selectVideo);
 
         // @@@@@@@@@@@@ get Intent @@@@@@@@@@@
@@ -278,12 +273,20 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         if (imageList != null) {
             post_type = "images";
             selectedNewImagesRC.setVisibility(View.VISIBLE);
-            selectedNewImagesRC.setAdapter(new SelectedImagesAdapter(activity, imageList));
+            selectedNewImagesRC.setAdapter(new SelectedImagesAdapter(activity, imageList,
+                    new SelectedImagesAdapter.SelectImageToShowListener() {
+                        @Override
+                        public void selectImage(String position) {
+                            startActivity(new Intent(activity, ShowSelectedImagesActivity.class)
+                                    .putExtra("imagesList", (ArrayList<String>) imageList)
+                                    .putExtra("position", position));
+                        }
+                    }));
         }
 
         if (textWithBg != null) {
             imagesBgRC.setVisibility(View.VISIBLE);
-            post_type = "text_bg_image";
+            post_type = "text_with_bg";
         }
 
 
@@ -398,10 +401,10 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     private void postApi() {
 
         String user_id = App.getAppPreference().getString(AppConstants.USER_ID);
-        post_title = hashTagET.getText().toString();
-        post_caption = captionTextPost.getText().toString();
+        String post_title = hashTagET.getText().toString();
+        String post_caption = captionTextPost.getText().toString();
 
-        if (post_caption.isEmpty() && !post_type.equalsIgnoreCase("text_bg_image")) {
+        if (post_caption.isEmpty() && !post_type.equalsIgnoreCase("text_with_bg")) {
             Common.showToast(activity, "Please add post caption");
         } else if (post_title.isEmpty()) {
             Common.showToast(activity, "Please add post title");
@@ -448,7 +451,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
 
                 File file = new File(videoPath);
                 RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-                post_video = MultipartBody.Part.createFormData("post_video", file.getName(), requestFile);
+                MultipartBody.Part post_video = MultipartBody.Part.createFormData("post_video", file.getName(), requestFile);
 
                 postPresenter.goPost(map, fileToUpload, post_imagesPart, post_video);
             } else if (post_type.equalsIgnoreCase("images")) {
@@ -467,9 +470,8 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
 
                 postPresenter.goPost(map, file, post_images, fileToUpload);
 
-            } else if (post_type.equalsIgnoreCase("text_bg_image")) {
+            } else if (post_type.equalsIgnoreCase("text_with_bg")) {
                 height = viewScreen.getWidth();
-                width = viewScreen.getHeight();
 
                 Bitmap bitmap = loadBitmapFromView(viewScreen,
                         viewScreen.getWidth(), viewScreen.getHeight());
@@ -487,8 +489,9 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
                 post_imagesPart[0] = file1;
                 post_imagesPart[1] = file2;
 
-                RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), imageWithBgPath);
-                text_bg_image = MultipartBody.Part.createFormData("text_bg_image", imageWithBgPath.getName(), requestFile);
+                File file = new File(imageBgPath);
+                RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+                MultipartBody.Part text_bg_image = MultipartBody.Part.createFormData("text_bg_image", file.getName(), requestFile);
 
                 postPresenter.goPost(map, text_bg_image, post_imagesPart, fileToUpload);
             }
@@ -572,31 +575,35 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    @Override
+    public void onBackPressed() {
+        dialogPostDiscard();
+    }
+
     private void dialogPostDiscard() {
 
         final Dialog dialog = new Dialog(activity);
         dialog.setContentView(R.layout.dialog_remove_follower);
 
-        final Button textRemoveFollower = dialog.findViewById(R.id.textRemoveFollower);
-        textRemoveFollower.setText("Discard Post?");
+        TextView textRemoveFollower = dialog.findViewById(R.id.textRemoveFollower);
+        String discardPost = "Discard Post?";
+        textRemoveFollower.setText(discardPost);
 
-        final Button textRemoveFollowerName = dialog.findViewById(R.id.textRemoveFollowerName);
-        textRemoveFollowerName.setText("If you go back, you will lose your post.");
+        TextView textRemoveFollowerName = dialog.findViewById(R.id.textRemoveFollowerName);
+        String lostPost = "If you go back, you will lose your post.";
+        textRemoveFollowerName.setText(lostPost);
 
-        final Button discardPostBtn = dialog.findViewById(R.id.keepFollowerBtn);
-        discardPostBtn.setText("Discard");
+        Button discardPostBtn = dialog.findViewById(R.id.keepFollowerBtn);
+        String discard = "Discard";
+        discardPostBtn.setText(discard);
 
-        final Button keepPostBtn = dialog.findViewById(R.id.removeFollowerBtn);
-        keepPostBtn.setText("Keep");
+        Button keepPostBtn = dialog.findViewById(R.id.removeFollowerBtn);
+        String keep = "Keep";
+        keepPostBtn.setText(keep);
 
         discardPostBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                discardPostBtn.setBackground(activity.getResources().getDrawable(R.drawable.button_bg_blue));
-//                discardPostBtn.setTextColor(activity.getResources().getColor(R.color.whiteColor));
-//
-//                keepPostBtn.setBackground(activity.getResources().getDrawable(R.drawable.stroke_black));
-//                keepPostBtn.setTextColor(activity.getResources().getColor(R.color.black80));
                 dialog.dismiss();
                 finish();
             }
@@ -605,15 +612,11 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         keepPostBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                keepPostBtn.setBackground(activity.getResources().getDrawable(R.drawable.button_bg_blue));
-//                keepPostBtn.setTextColor(activity.getResources().getColor(R.color.whiteColor));
-//
-//                discardPostBtn.setBackground(activity.getResources().getDrawable(R.drawable.stroke_black));
-//                discardPostBtn.setTextColor(activity.getResources().getColor(R.color.black80));
                 dialog.dismiss();
             }
         });
 
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.show();
     }
 
@@ -625,9 +628,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
             post_location = data.getStringExtra("address");
             locationPlaceET.setText(post_location);
         }
-
     }
-
 
     public static Bitmap loadBitmapFromView(View v, int width, int height) {
         Bitmap b = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
@@ -639,18 +640,17 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
 
     private void createDirectoryAndSaveFile(Bitmap imageToSave, String fileName) {
 
-        folder = new File(getFilesDir() +
-                "Yeloopp");
+        File folder = new File(getFilesDir() + "Yeloopp");
 
         if (!folder.exists()) {
             success = folder.mkdirs();
         }
         if (success) {
-            imageWithBgPath = new File(getFilesDir() +
+            imageWithBgFile = new File(getFilesDir() +
                     "Yeloopp", fileName);
 
             try {
-                FileOutputStream out = new FileOutputStream(imageWithBgPath);
+                FileOutputStream out = new FileOutputStream(imageWithBgFile);
                 imageToSave.compress(Bitmap.CompressFormat.JPEG, 100, out);
                 out.flush();
                 out.close();
@@ -661,15 +661,39 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
             Log.d("Beant ", "createDirectoryAndSaveFile: Unable to Create folder");
         }
 
-        if (imageWithBgPath.exists()) {
-            Log.d("Beant", "createDirectoryAndSaveFile: " + imageWithBgPath.getAbsolutePath());
-            Bitmap myBitmap = BitmapFactory.decodeFile(imageWithBgPath.getAbsolutePath());
+        if (imageWithBgFile.exists()) {
+            Log.d("Beant", "createDirectoryAndSaveFile: " + imageWithBgFile.getAbsolutePath());
+            Bitmap myBitmap = BitmapFactory.decodeFile(imageWithBgFile.getAbsolutePath());
 
             imageBG.setImageBitmap(myBitmap);
+
+            Uri uri = getImageUri(activity, myBitmap);
+            imageBgPath = getRealPathFromUri(uri);
         }
 
         ViewGroup.LayoutParams layoutParams = viewScreen.getLayoutParams();
         layoutParams.height = height;
         viewScreen.setLayoutParams(layoutParams);
+    }
+
+    private Uri getImageUri(Activity activity, Bitmap bitmap) {
+        String path = MediaStore.Images.Media.insertImage(activity.getContentResolver(), bitmap, "Title", null);
+        return Uri.parse(path);
+    }
+
+    private String getRealPathFromUri(Uri tempUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = {MediaStore.Images.Media.DATA};
+            cursor = activity.getContentResolver().query(tempUri, proj, null, null, null);
+            assert cursor != null;
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
     }
 }

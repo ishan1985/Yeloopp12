@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageView android:id="@+id/imgSelected"
-    android:layout_width="@dimen/space45"
-    android:layout_height="@dimen/space45"
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imgSelected"
+    android:layout_width="@dimen/space50"
+    android:layout_height="@dimen/space50"
+    android:layout_margin="@dimen/space3"
     android:contentDescription="@null"
-    android:scaleType="centerCrop"
-    xmlns:android="http://schemas.android.com/apk/res/android" />
+    android:scaleType="centerCrop" />

@@ -20,9 +20,13 @@ public class SelectedImagesAdapter extends RecyclerView.Adapter<SelectedImagesAd
     private Activity activity;
     private List<String> images;
 
-    public SelectedImagesAdapter(Activity activity, List<String> images) {
+    private SelectImageToShowListener listener;
+
+    public SelectedImagesAdapter(Activity activity, List<String> images,
+                                 SelectImageToShowListener listener) {
         this.activity = activity;
         this.images = images;
+        this.listener = listener;
     }
 
     @NonNull
@@ -43,6 +47,10 @@ public class SelectedImagesAdapter extends RecyclerView.Adapter<SelectedImagesAd
         return images.size();
     }
 
+    public interface SelectImageToShowListener {
+        void selectImage(String position);
+    }
+
     class SelectedImagesViewHolder extends RecyclerView.ViewHolder {
         ImageView imgSelected;
 
@@ -51,6 +59,12 @@ public class SelectedImagesAdapter extends RecyclerView.Adapter<SelectedImagesAd
 
             imgSelected = itemView.findViewById(R.id.imgSelected);
 
+            imgSelected.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    listener.selectImage(String.valueOf(getAdapterPosition()));
+                }
+            });
         }
 
         public void bind(int position) {

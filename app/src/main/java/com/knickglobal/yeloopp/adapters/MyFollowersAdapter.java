@@ -66,7 +66,7 @@ public class MyFollowersAdapter extends RecyclerView.Adapter<MyFollowersAdapter.
 
         final Button keepFollowerBtn=dialog.findViewById(R.id.keepFollowerBtn);
         final Button removeFollowerBtn=dialog.findViewById(R.id.removeFollowerBtn);
-        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
         keepFollowerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +92,7 @@ public class MyFollowersAdapter extends RecyclerView.Adapter<MyFollowersAdapter.
                 dialog.dismiss();
             }
         });
-
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.show();
     }
 

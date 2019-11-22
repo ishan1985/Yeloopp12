@@ -34,6 +34,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -61,7 +62,7 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
 
     private CustomProgressDialog dialog;
 
-    private String latitude = "", longitude = "", locationAddress = "";
+    private String locationAddress = "";
 
     private LatLng centerLatLng;
 
@@ -140,6 +141,8 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
                 getAddressFromLatLng(centerLatLng);
             }
         });
+
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(20.5937, 78.9629), 5));
 
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED && checkSelfPermission

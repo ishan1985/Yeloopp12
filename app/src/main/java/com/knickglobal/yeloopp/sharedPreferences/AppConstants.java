@@ -9,7 +9,7 @@ public class AppConstants {
 
     public static final String NO_DATA_FOUND = "No Data Found";
 
-    public static final String IMAGE_URL = "http://knickglobal.co.in/yeloopp/";
+    public static final String IMAGE_URL = "http://knickglobal.co.in/yeloopp/post_gallery/";
 
     public static final String IS_LOGIN = "is_login";
     public static final String LOGIN_TYPE = "login_type";

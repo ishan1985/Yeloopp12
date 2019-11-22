@@ -17,18 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.MapActivity">
-
-        </activity>
+        <activity android:name=".activities.ShowSelectedImagesActivity"></activity>
+        <activity android:name=".activities.MapActivity"></activity>
         <activity android:name=".activities.DeviceImagesActivity" />
         <activity android:name=".activities.DeviceVideosActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.FollowersAndFollowingsActivity" />
         <activity android:name=".activities.ShowOtherProfileActivity" />
         <activity android:name=".activities.EditProfileActivity" />
-        <activity android:name=".activities.NewPostActivity" >
-
-        </activity>
+        <activity android:name=".activities.NewPostActivity"></activity>
         <activity
             android:name=".activities.HomeActivity"
             android:windowSoftInputMode="adjustPan" />
@@ -94,7 +91,6 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
     </application>
 
 </manifest>

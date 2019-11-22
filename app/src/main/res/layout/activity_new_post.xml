@@ -233,7 +233,7 @@
                 android:drawablePadding="@dimen/space7"
                 android:fontFamily="@font/lato"
                 android:hint="@string/tag"
-                android:maxLines="3"
+                android:maxLines="1"
                 android:padding="@dimen/space12"
                 android:textColor="@color/blackColor"
                 android:textColorHint="@color/black80"
