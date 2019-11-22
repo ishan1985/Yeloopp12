@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteColor"
+    android:orientation="vertical"
+    tools:context=".activities.SettingsActivity">
+
+    <include
+        layout="@layout/app_bar"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space10"
+                android:layout_marginBottom="@dimen/space10"
+                android:layout_marginStart="@dimen/space25"
+                android:hint="@string/search"
+                android:textSize="@dimen/text16"
+                android:paddingStart="@dimen/space20"
+                android:paddingEnd="@dimen/space20"
+                android:padding="@dimen/space12"
+                android:fontFamily="@font/lato"
+                android:inputType="text"
+                android:textColor="@color/blackColor"
+                android:drawableEnd="@drawable/ic_search_unselected"
+                android:background="@drawable/dim_et_bg"
+                android:layout_marginEnd="@dimen/space25"
+                tools:ignore="Autofill" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space1"
+                android:background="@color/black50"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:layout_marginTop="@dimen/space5"
+                android:fontFamily="@font/lato"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text16"
+                android:text="@string/security"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blackColor"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text16"
+                android:text="@string/account"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blackColor"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text16"
+                android:text="@string/privacy"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:layout_marginStart="@dimen/space20"
+                android:fontFamily="@font/lato"
+                android:layout_marginEnd="@dimen/space20"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text16"
+                android:text="@string/help"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                android:fontFamily="@font/lato"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text16"
+                android:text="@string/about"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:fontFamily="@font/lato"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text16"
+                android:text="@string/contact_us"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blackColor"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text16"
+                android:text="@string/notification"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space1"
+                android:background="@color/black50"
+                android:layout_marginTop="@dimen/space10"
+                android:layout_marginBottom="@dimen/space10"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space12"
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blueColor"
+                android:layout_marginBottom="@dimen/space40"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                android:background="?attr/selectableItemBackground"
+                android:textSize="@dimen/text18"
+                android:textStyle="bold"
+                android:text="@string/log_out"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

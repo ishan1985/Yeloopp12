@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "403997428828",
+    "firebase_url": "https://yeloopp.firebaseio.com",
+    "project_id": "yeloopp",
+    "storage_bucket": "yeloopp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403997428828:android:bfd239d9aa333d10972a99",
+        "android_client_info": {
+          "package_name": "com.knickglobal.yeloopp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403997428828-pl13anqe9n6irs5mqjqh8leldvvblkcj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.knickglobal.yeloopp",
+            "certificate_hash": "decb86d663b0306b5f7aca36e0242c9079cf07ab"
+          }
+        },
+        {
+          "client_id": "403997428828-g7csjgt8hi6jitq6se79u81fva759hiq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.knickglobal.yeloopp",
+            "certificate_hash": "818e7698a4e5a26d0488ca06247b967a67444a32"
+          }
+        },
+        {
+          "client_id": "403997428828-hkb851a48ab34ebfh5jf1mckppej3cud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUfWtImL7y036Auomj8iFDGXxE7o6L5jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403997428828-hkb851a48ab34ebfh5jf1mckppej3cud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

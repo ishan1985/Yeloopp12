@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/space180"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_white_bg"
+    android:layout_gravity="center"
+    android:elevation="@dimen/space2"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/publicBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space20"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/lato"
+        android:gravity="center"
+        android:padding="@dimen/space10"
+        android:text="@string/publicc"
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/text16" />
+
+    <TextView
+        android:id="@+id/privateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/lato"
+        android:gravity="center"
+        android:padding="@dimen/space10"
+        android:text="@string/privatee"
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/text16" />
+
+    <TextView
+        android:id="@+id/friendsOnlyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/lato"
+        android:gravity="center"
+        android:padding="@dimen/space10"
+        android:text="@string/friends_only"
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/text16" />
+
+    <TextView
+        android:id="@+id/onlyMeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space20"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/lato"
+        android:gravity="center"
+        android:padding="@dimen/space10"
+        android:text="@string/only_me"
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/text16" />
+
+</LinearLayout>

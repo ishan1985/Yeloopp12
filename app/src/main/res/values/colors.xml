@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004A94</color>
+    <color name="colorPrimaryDark">#004A94</color>
+    <color name="colorAccent">#004A94</color>
+    <color name="navyBlueColor">#000F08</color>
+    <color name="blackColor">#000000</color>
+    <color name="black50">#80000000</color>
+    <color name="black30">#4D000000</color>
+    <color name="black80">#CB000000</color>
+    <color name="grayColor">#4D5752</color>
+    <color name="whiteColor">#ffffff</color>
+    <color name="white50">#80FFFFFF</color>
+    <color name="lightBlueColor">#2E7CCA</color>
+    <color name="blueColor">#004A94</color>
+    <color name="facebookColor">#3C4AA9</color>
+    <color name="googleColor">#D14F34</color>
+    <color name="lightBlueET">#2366A8</color>
+    <color name="pinkColor">#FF6E6E</color>
+    <color name="dimColor">#27575757</color>
+
+</resources>

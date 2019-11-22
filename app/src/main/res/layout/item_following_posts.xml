@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/whiteColor">
+
+    <RelativeLayout
+        android:id="@+id/nameL"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space65">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageUserPost"
+            android:layout_width="@dimen/space50"
+            android:layout_height="@dimen/space50"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/space10"
+            android:src="@drawable/ic_placeholder" />
+
+        <TextView
+            android:id="@+id/nameUserPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space5"
+            android:layout_marginTop="@dimen/space12"
+            android:layout_marginEnd="@dimen/space10"
+            android:layout_toStartOf="@+id/postLocation"
+            android:layout_toEndOf="@+id/imageUserPost"
+            android:fontFamily="@font/lato"
+            android:maxLines="1"
+            android:text="@string/name"
+            android:textColor="@color/blueColor"
+            android:textSize="@dimen/text14"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/timeUserPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameUserPost"
+            android:layout_marginStart="@dimen/space5"
+            android:layout_marginTop="@dimen/space6"
+            android:layout_marginEnd="@dimen/space10"
+            android:layout_toEndOf="@+id/imageUserPost"
+            android:drawableStart="@drawable/ic_clock_with_white_face"
+            android:drawablePadding="@dimen/space5"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/wednesday"
+            android:textColor="@color/black80"
+            android:textSize="@dimen/text12" />
+
+        <TextView
+            android:id="@+id/postLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/space17"
+            android:layout_marginEnd="@dimen/space10"
+            android:drawableEnd="@drawable/ic_navigation"
+            android:drawablePadding="@dimen/space5"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/location"
+            android:textColor="@color/black80"
+            android:textSize="@dimen/text12" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imagePost"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space190"
+        android:layout_below="@+id/nameL"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/post_image" />
+
+    <ImageView
+        android:id="@+id/likePostBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagePost"
+        android:contentDescription="@null"
+        android:padding="@dimen/space6"
+        android:src="@drawable/ic_like_post" />
+
+    <ImageView
+        android:id="@+id/commentPostBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagePost"
+        android:layout_toEndOf="@+id/likePostBtn"
+        android:contentDescription="@null"
+        android:padding="@dimen/space6"
+        android:src="@drawable/ic_comment_post" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagePost"
+        android:layout_toEndOf="@+id/commentPostBtn"
+        android:contentDescription="@null"
+        android:padding="@dimen/space6"
+        android:src="@drawable/ic_share" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagePost"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@null"
+        android:padding="@dimen/space6"
+        android:src="@drawable/ic_download_unselected" />
+
+    <TextView
+        android:id="@+id/likeByPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/likePostBtn"
+        android:fontFamily="@font/lato"
+        android:layout_marginStart="@dimen/space8"
+        android:maxLines="1"
+        android:textColor="@color/black80"
+        android:text="@string/liked_by_nibbi_and_431_others" />
+
+    <TextView
+        android:id="@+id/captionPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/likeByPost"
+        android:layout_marginStart="@dimen/space8"
+        android:maxLines="1"
+        android:fontFamily="@font/lato"
+        android:layout_marginTop="@dimen/space5"
+        android:textColor="@color/blueColor"
+        android:text="@string/travel" />
+
+    <TextView
+        android:id="@+id/viewAllCommentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/captionPost"
+        android:layout_marginTop="@dimen/space5"
+        android:layout_marginStart="@dimen/space8"
+        android:fontFamily="@font/lato"
+        android:maxLines="1"
+        android:layout_marginBottom="@dimen/space5"
+        android:textColor="@color/black80"
+        android:text="@string/view_all_72_comments" />
+
+</RelativeLayout>

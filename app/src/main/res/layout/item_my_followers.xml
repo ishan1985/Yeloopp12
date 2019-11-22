@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/whiteColor">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageMyFollower"
+        android:layout_width="@dimen/space50"
+        android:layout_height="@dimen/space50"
+        android:layout_marginStart="@dimen/space8"
+        android:layout_marginTop="@dimen/space7"
+        android:layout_marginBottom="@dimen/space8"
+        android:src="@drawable/post_image" />
+
+    <TextView
+        android:id="@+id/nameMyFollower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/followBtnMyFollower"
+        android:layout_toEndOf="@id/imageMyFollower"
+        android:maxLines="1"
+        android:padding="@dimen/space8"
+        android:textSize="@dimen/text15"
+        android:text="@string/name"
+        android:textColor="@color/lightBlueColor" />
+
+    <Button
+        android:id="@+id/followBtnMyFollower"
+        android:layout_width="@dimen/space90"
+        android:fontFamily="@font/lato"
+        android:layout_height="@dimen/space30"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/menuBtnMyFollowers"
+        android:background="@drawable/button_bg_light_blue"
+        android:text="@string/follow"
+        android:textAllCaps="false"
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/text14" />
+
+    <ImageView
+        android:id="@+id/menuBtnMyFollowers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@null"
+        android:padding="@dimen/space10"
+        android:src="@drawable/ic_menu_btn" />
+
+</RelativeLayout>

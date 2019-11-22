@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/space0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/blueColor">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/space12"
+                android:layout_toStartOf="@id/followUsersIcon"
+                android:background="@drawable/search_et_bg"
+                android:drawableEnd="@drawable/ic_search"
+                android:hint="@string/find_something"
+                android:inputType="text"
+                android:padding="@dimen/space10"
+                android:fontFamily="@font/lato"
+                android:paddingStart="@dimen/text12"
+                android:paddingEnd="@dimen/text12"
+                android:textColor="@color/whiteColor"
+                android:textColorHint="@color/white50"
+                android:textSize="@dimen/text15"
+                tools:ignore="Autofill,LabelFor" />
+
+            <ImageButton
+                android:id="@+id/followUsersIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/space8"
+                android:background="@color/blueColor"
+                android:contentDescription="@null"
+                android:padding="@dimen/space10"
+                android:src="@drawable/ic_follow_people" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/space0">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/homeTL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space45"
+            app:tabSelectedTextColor="@color/blackColor"
+            app:tabTextColor="@color/grayColor"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/homeVP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>

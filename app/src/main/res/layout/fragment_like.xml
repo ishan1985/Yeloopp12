@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.LikeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/homeCV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/space0">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/likeTL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space45"
+            app:tabSelectedTextColor="@color/blackColor"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/grayColor">
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/likeVP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.viewpager.widget.ViewPager>
+
+</LinearLayout>

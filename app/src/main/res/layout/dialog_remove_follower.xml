@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg_stroke">
+
+    <TextView
+        android:id="@+id/textRemoveFollower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space20"
+        android:fontFamily="@font/lato"
+        android:text="@string/remove_follower"
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/text20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textRemoveFollowerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textRemoveFollower"
+        android:fontFamily="@font/lato"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/space15"
+        android:layout_marginTop="@dimen/space20"
+        android:layout_marginEnd="@dimen/space15"
+        android:gravity="center"
+        android:text="@string/remove_follower_name_text"
+        android:textColor="@color/black80"
+        android:textSize="@dimen/text16" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textRemoveFollowerName"
+        android:layout_marginStart="@dimen/space15"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/space45"
+        android:layout_marginBottom="@dimen/space13"
+        android:layout_marginEnd="@dimen/space15">
+
+        <Button
+            android:id="@+id/keepFollowerBtn"
+            android:layout_width="@dimen/space120"
+            android:layout_height="@dimen/space35"
+            android:layout_marginTop="@dimen/space3"
+            android:layout_marginBottom="@dimen/space8"
+            android:fontFamily="@font/lato"
+            android:background="@drawable/stroke_black"
+            android:text="@string/keep"
+            android:textAllCaps="false"
+            android:textColor="@color/black80" />
+
+        <Button
+            android:id="@+id/removeFollowerBtn"
+            android:layout_width="@dimen/space120"
+            android:layout_height="@dimen/space35"
+            android:layout_marginTop="@dimen/space3"
+            android:layout_marginBottom="@dimen/space8"
+            android:layout_marginStart="@dimen/space20"
+            android:layout_toEndOf="@id/keepFollowerBtn"
+            android:fontFamily="@font/lato"
+            android:background="@drawable/button_bg_blue"
+            android:text="@string/remove"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteColor" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

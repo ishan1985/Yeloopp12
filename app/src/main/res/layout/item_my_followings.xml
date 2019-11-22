@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/whiteColor">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageMyFollowing"
+        android:layout_width="@dimen/space50"
+        android:layout_height="@dimen/space50"
+        android:layout_marginStart="@dimen/space8"
+        android:layout_marginTop="@dimen/space7"
+        android:layout_marginBottom="@dimen/space8"
+        android:src="@drawable/post_image" />
+
+    <TextView
+        android:id="@+id/nameMyFollowing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/followBtnMyFollowing"
+        android:fontFamily="@font/lato"
+        android:layout_toEndOf="@id/imageMyFollowing"
+        android:maxLines="1"
+        android:padding="@dimen/space8"
+        android:text="@string/name"
+        android:textColor="@color/lightBlueColor"
+        android:textSize="@dimen/text15" />
+
+    <Button
+        android:id="@+id/followBtnMyFollowing"
+        android:layout_width="@dimen/space90"
+        android:layout_height="@dimen/space30"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="@font/lato"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/space10"
+        android:background="@drawable/button_bg_light_blue"
+        android:text="@string/following"
+        android:textAllCaps="false"
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/text14" />
+
+</RelativeLayout>

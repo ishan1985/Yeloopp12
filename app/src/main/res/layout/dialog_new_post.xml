@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_dialog_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space12">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stroke_round_5"
+            android:padding="@dimen/space4">
+
+            <ImageButton
+                android:id="@+id/textWithBgPostL"
+                android:layout_width="@dimen/space50"
+                android:layout_height="@dimen/space50"
+                android:background="@color/whiteColor"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_text_bg" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space15"
+            android:background="@drawable/stroke_round_5"
+            android:padding="@dimen/space4">
+
+            <ImageButton
+                android:id="@+id/imagePostL"
+                android:layout_width="@dimen/space50"
+                android:layout_height="@dimen/space50"
+                android:background="@color/whiteColor"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_add_image" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space15"
+            android:background="@drawable/stroke_round_5"
+            android:padding="@dimen/space4">
+
+            <ImageButton
+                android:id="@+id/videoPostL"
+                android:layout_width="@dimen/space50"
+                android:layout_height="@dimen/space50"
+                android:background="@color/whiteColor"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_add_video" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

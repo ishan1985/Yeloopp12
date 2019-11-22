@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Yeloopp</string>
+
+    //maps key
+    <string name="map_api_key">AIzaSyDXnf9D_8E01tmGVTdBZ06wp2pjZz3EdIo</string>
+
+
+    <string name="facebook_app_id">467087610822387</string>
+    <string name="fb_login_protocol_scheme">fb467087610822387</string>
+
+    <string name="hello">Hello!</string>
+    <string name="login_text">Aliquam consecetur, eros et vulputate\neuismod, nunc leo tempor lacus.</string>
+    <string name="login">LOGIN</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="request_otp">Request OTP</string>
+    <string name="or_login_in_with">or login in with</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="please_type_the_verification_code_sent_to">Please type the verification code sent to</string>
+    <string name="_919876543211">+919876543211</string>
+    <string name="confirm">Confirm</string>
+    <string name="there_you_go">There you go!</string>
+    <string name="follow_minimum_of_3_user_to_start"><font color="#4D5752">Follow minimum of</font> <font color="#004A94">3 User</font> <font color="#4D5752">to start</font></string>
+    <string name="julie_nelson">Julie Nelson</string>
+    <string name="traveler">#Traveler</string>
+    <string name="follow">Follow</string>
+    <string name="find_something">Find something…</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location">Location</string>
+    <string name="name">Name</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="save">Save</string>
+    <string name="liked_by_nibbi_and_431_others">Liked by nibbi and 431 others</string>
+    <string name="travel">#travel</string>
+    <string name="view_all_72_comments">view all 72 comments</string>
+    <string name="what_would_you_like_to_share">What would you like to share?</string>
+    <string name="moscow_russia">MOSCOW, RUSSIA</string>
+    <string name="_258">258</string>
+    <string name="posts">Posts</string>
+    <string name="_2_6k">2.6K</string>
+    <string name="followers">Followers</string>
+    <string name="_937">937</string>
+    <string name="following">Following</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="i_love_to_travel_the_world_with_my_friends">I love to travel the world with\nmy Friends.</string>
+    <string name="bio">Bio</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="city">City</string>
+    <string name="pincode">Pincode</string>
+    <string name="dob">DOB</string>
+    <string name="friend_requests">Friend Requests</string>
+    <string name="louis_french_wants_to_be_friend_with_you">Louis French wants to be friend with you.</string>
+    <string name="accept">Accept</string>
+    <string name="remove">Remove</string>
+    <string name="today">Today</string>
+    <string name="sadie_hamilton_and_24_others_liked_your_post">Sadie Hamilton and 24 others liked your post</string>
+    <string name="write_something_about_you">Write something about you..</string>
+    <string name="remove_follower">Remove Follower?</string>
+    <string name="remove_follower_name_text">Are you sure you want to remove Shane Henry From followers?</string>
+    <string name="keep">Keep</string>
+    <string name="topic">Topic</string>
+    <string name="add_location">Add Location</string>
+    <string name="tag">Tag</string>
+    <string name="privacy_settings">Privacy Settings</string>
+    <string name="allow_comments">Allow Comments</string>
+    <string name="allow_save">Allow Save</string>
+    <string name="allow_share">Allow Share</string>
+    <string name="share_post">Share Post</string>
+    <string name="publicc">Public</string>
+    <string name="privatee">Private</string>
+    <string name="friends_only">Friends Only</string>
+    <string name="only_me">Only Me</string>
+    <string name="search">Search</string>
+    <string name="security">Security</string>
+    <string name="account">Account</string>
+    <string name="privacy">Privacy</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="notification">Notification</string>
+    <string name="log_out">Log Out</string>
+    <string name="time">Time</string>
+    <string name="_00_00">00:00</string>
+    <string name="continue_">Continue</string>
+    <string name="next">Next</string>
+</resources>

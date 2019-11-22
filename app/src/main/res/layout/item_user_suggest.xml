@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageChooseThree"
+        android:layout_width="@dimen/space100"
+        android:layout_height="@dimen/space100"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/space5"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_placeholder" />
+
+    <TextView
+        android:id="@+id/nameChooseThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/lato"
+        android:text="@string/julie_nelson"
+        android:textColor="@color/grayColor"
+        android:textSize="@dimen/text14"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tagChooseThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space3"
+        android:fontFamily="@font/lato"
+        android:text="@string/traveler"
+        android:textColor="@color/grayColor"
+        android:textSize="@dimen/text14"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/followChooseThree"
+        android:layout_width="@dimen/space90"
+        android:layout_height="@dimen/space25"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_marginBottom="@dimen/space5"
+        android:background="@drawable/button_bg_blue"
+        android:fontFamily="@font/lato"
+        android:text="@string/follow"
+        android:textAllCaps="false"
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/text12"
+        android:textStyle="bold" />
+
+</LinearLayout>

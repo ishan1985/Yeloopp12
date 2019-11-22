@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/space3"
+    android:layout_marginBottom="@dimen/space5"
+    android:background="@color/whiteColor"
+    app:cardCornerRadius="@dimen/space0"
+    app:cardElevation="@dimen/space5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageRequest"
+            android:layout_width="@dimen/space40"
+            android:layout_height="@dimen/space40"
+            android:layout_marginStart="@dimen/space15"
+            android:layout_marginTop="@dimen/space12"
+            android:src="@drawable/ic_placeholder" />
+
+        <TextView
+            android:id="@+id/descriptionRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space10"
+            android:layout_marginTop="@dimen/space13"
+            android:layout_marginEnd="@dimen/space10"
+            android:fontFamily="@font/lato"
+            android:layout_toEndOf="@+id/imageRequest"
+            android:maxLines="2"
+            android:text="@string/louis_french_wants_to_be_friend_with_you"
+            android:textColor="@color/black80"
+            android:textSize="@dimen/text14" />
+
+        <Button
+            android:id="@+id/acceptRequest"
+            android:layout_width="@dimen/space100"
+            android:layout_height="@dimen/space30"
+            android:layout_below="@+id/imageRequest"
+            android:layout_marginStart="@dimen/space10"
+            android:layout_marginTop="-3dp"
+            android:layout_marginBottom="@dimen/space12"
+            android:layout_toEndOf="@+id/imageRequest"
+            android:background="@drawable/button_bg_blue"
+            android:fontFamily="@font/lato"
+            android:text="@string/accept"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteColor"
+            android:textSize="@dimen/text14" />
+
+        <Button
+            android:id="@+id/removeRequest"
+            android:layout_width="@dimen/space100"
+            android:fontFamily="@font/lato"
+            android:layout_height="@dimen/space30"
+            android:layout_below="@+id/imageRequest"
+            android:layout_marginStart="@dimen/space15"
+            android:layout_marginTop="-3dp"
+            android:layout_marginBottom="@dimen/space12"
+            android:layout_toEndOf="@+id/acceptRequest"
+            android:background="@drawable/button_bg_pink"
+            android:text="@string/remove"
+            android:textAllCaps="false"
+            android:textColor="@color/whiteColor"
+            android:textSize="@dimen/text14" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

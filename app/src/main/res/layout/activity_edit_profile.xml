@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteColor"
+    tools:context=".activities.EditProfileActivity">
+
+    <include
+        layout="@layout/app_bar"
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageEditProfile"
+                android:layout_width="@dimen/space100"
+                android:layout_height="@dimen/space100"
+                android:src="@drawable/ic_placeholder"
+                android:layout_marginTop="@dimen/space20"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/nameEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textStyle="bold"
+                android:textColor="@color/blackColor"
+                android:fontFamily="@font/lato"
+                android:textSize="@dimen/text16"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/space10"
+                android:layout_marginEnd="@dimen/space10"
+                android:layout_marginTop="@dimen/space5"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bio"
+                android:textColor="@color/blackColor"
+                android:fontFamily="@font/lato"
+                android:textSize="@dimen/text16"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/space10"
+                android:layout_marginEnd="@dimen/space10"
+                android:layout_marginTop="@dimen/space10"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:gravity="top|center"
+                android:hint="@string/write_something_about_you"
+                android:textColorHint="@color/black50"
+                android:textColor="@color/blackColor"
+                android:padding="@dimen/space12"
+                android:textSize="@dimen/text16"
+                android:fontFamily="@font/lato"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                tools:ignore="Autofill,TextFields" />
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/maleEditProfile"
+                    android:layout_width="@dimen/space110"
+                    android:layout_height="@dimen/space35"
+                    android:background="@drawable/stroke_black"
+                    android:layout_marginTop="@dimen/space7"
+                    android:text="@string/male"
+                    android:fontFamily="@font/lato"
+                    android:textSize="@dimen/text14"
+                    android:textColor="@color/blackColor"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="@dimen/space7"
+                    />
+
+                <Button
+                    android:id="@+id/femaleEditProfile"
+                    android:layout_width="@dimen/space110"
+                    android:layout_height="@dimen/space35"
+                    android:fontFamily="@font/lato"
+                    android:background="@drawable/button_bg_blue"
+                    android:layout_marginTop="@dimen/space7"
+                    android:text="@string/female"
+                    android:layout_marginStart="@dimen/space20"
+                    android:textSize="@dimen/text14"
+                    android:textColor="@color/whiteColor"
+                    android:layout_toEndOf="@id/maleEditProfile"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="@dimen/space7"
+                    />
+
+            </RelativeLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:gravity="center"
+                android:hint="@string/phone_number"
+                android:layout_marginTop="@dimen/space5"
+                android:textColorHint="@color/black50"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/text16"
+                android:backgroundTint="@color/black30"
+                android:padding="@dimen/space12"
+                android:fontFamily="@font/lato"
+                android:inputType="number"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                tools:ignore="Autofill,TextFields" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:gravity="center"
+                android:fontFamily="@font/lato"
+                android:hint="@string/email"
+                android:layout_marginTop="@dimen/space5"
+                android:textColorHint="@color/black50"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/text16"
+                android:padding="@dimen/space12"
+                android:inputType="textEmailAddress"
+                android:backgroundTint="@color/black30"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                tools:ignore="Autofill,TextFields" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:gravity="center"
+                android:fontFamily="@font/lato"
+                android:hint="@string/city"
+                android:layout_marginTop="@dimen/space5"
+                android:textColorHint="@color/black50"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/text16"
+                android:padding="@dimen/space12"
+                android:backgroundTint="@color/black30"
+                android:inputType="text"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                tools:ignore="Autofill,TextFields" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:maxLines="3"
+                android:gravity="center"
+                android:hint="@string/pincode"
+                android:layout_marginTop="@dimen/space5"
+                android:textColorHint="@color/black50"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/text16"
+                android:backgroundTint="@color/black30"
+                android:inputType="text"
+                android:layout_marginStart="@dimen/space20"
+                android:padding="@dimen/space12"
+                android:layout_marginEnd="@dimen/space20"
+                tools:ignore="Autofill,TextFields" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:gravity="center"
+                android:hint="@string/dob"
+                android:layout_marginTop="@dimen/space5"
+                android:textColorHint="@color/black50"
+                android:textColor="@color/blackColor"
+                android:textSize="@dimen/text16"
+                android:padding="@dimen/space12"
+                android:fontFamily="@font/lato"
+                android:backgroundTint="@color/black30"
+                android:inputType="text"
+                android:layout_marginStart="@dimen/space20"
+                android:layout_marginEnd="@dimen/space20"
+                tools:ignore="Autofill,TextFields" />
+
+            <Button
+                android:id="@+id/saveEditProfile"
+                android:layout_width="@dimen/space180"
+                android:layout_height="@dimen/space45"
+                android:background="@drawable/button_bg_blue"
+                android:layout_marginTop="@dimen/space30"
+                android:text="@string/save"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/text16"
+                android:textColor="@color/whiteColor"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_marginBottom="@dimen/space30"
+                android:fontFamily="@font/lato"
+                />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

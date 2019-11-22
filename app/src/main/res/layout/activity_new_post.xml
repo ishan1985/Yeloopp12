@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteColor"
+    android:orientation="vertical"
+    tools:context=".activities.NewPostActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/textPostions"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space15"
+                android:layout_marginEnd="@dimen/space15">
+
+                <RelativeLayout
+                    android:id="@+id/viewScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+
+                    <ImageView
+                        android:id="@+id/imageBG"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop" />
+
+                    <EditText
+                        android:id="@+id/captionTextPost"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/lato"
+                        android:gravity="top"
+                        android:hint="@string/what_would_you_like_to_share"
+                        android:padding="@dimen/space20"
+                        android:shadowColor="@color/whiteColor"
+                        android:shadowDx="2.5"
+                        android:shadowDy="2.3"
+                        android:shadowRadius="2.6"
+                        android:textColor="@color/blackColor"
+                        android:textColorHint="@color/black50"
+                        android:textSize="@dimen/text16"
+                        tools:ignore="Autofill,LabelFor,TextFields" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/textCenter"
+                    android:layout_width="@dimen/space35"
+                    android:layout_height="@dimen/space35"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/space5"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_center_text" />
+
+                <ImageView
+                    android:id="@+id/textFromLeft"
+                    android:layout_width="@dimen/space35"
+                    android:layout_height="@dimen/space35"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/space5"
+                    android:layout_toEndOf="@id/textCenter"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_left_text" />
+
+                <ImageView
+                    android:id="@+id/textFromRight"
+                    android:layout_width="@dimen/space35"
+                    android:layout_height="@dimen/space35"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/space5"
+                    android:layout_toEndOf="@+id/textFromLeft"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_right_text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/selectedNewImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textPostions"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/selectedNewImagesRC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <ImageView
+                    android:id="@+id/selectVideo"
+                    android:layout_width="@dimen/space45"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/imagesBgRC"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space50"
+                android:layout_below="@+id/selectedNewImages"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <AutoCompleteTextView
+                android:id="@+id/hashTagET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imagesBgRC"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15"
+                android:drawableStart="@drawable/ic_hashtag"
+                android:drawablePadding="@dimen/space7"
+                android:fontFamily="@font/lato"
+                android:hint="@string/topic"
+                android:maxLines="1"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:textColorHint="@color/black80"
+                android:textSize="@dimen/text16" />
+
+            <!--<EditText-->
+            <!--android:id="@+id/hashTagET"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/imagesBgRC"-->
+            <!--android:drawablePadding="@dimen/space7"-->
+            <!--android:layout_marginStart="@dimen/space15"-->
+            <!--android:layout_marginTop="@dimen/space5"-->
+            <!--android:layout_marginEnd="@dimen/space15"-->
+            <!--android:drawableStart="@drawable/ic_hashtag"-->
+            <!--android:fontFamily="@font/lato"-->
+            <!--android:hint="@string/topic"-->
+            <!--android:padding="@dimen/space12"-->
+            <!--android:textColor="@color/blackColor"-->
+            <!--android:textColorHint="@color/black80"-->
+            <!--android:textSize="@dimen/text16"-->
+            <!--tools:ignore="Autofill,LabelFor,TextFields" />-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hashTagRC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hashTagET"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginEnd="@dimen/space15"
+                android:visibility="gone">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <EditText
+                android:id="@+id/locationPlaceET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hashTagRC"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15"
+                android:drawableStart="@drawable/ic_shape_navigate"
+                android:drawablePadding="@dimen/space7"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/lato"
+                android:hint="@string/add_location"
+                android:maxLines="1"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:textColorHint="@color/black80"
+                android:textSize="@dimen/text16"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+            <!--<androidx.recyclerview.widget.RecyclerView-->
+            <!--android:id="@+id/locationPlaceRC"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_below="@+id/locationPlaceET"-->
+            <!--android:layout_marginStart="@dimen/space15"-->
+            <!--android:layout_marginEnd="@dimen/space15">-->
+
+            <!--</androidx.recyclerview.widget.RecyclerView>-->
+
+            <TextView
+                android:id="@+id/tagPerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/locationPlaceET"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15"
+                android:fontFamily="@font/lato"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blueColor"
+                android:textColorHint="@color/black80"
+                android:textSize="@dimen/text16"
+                android:visibility="gone" />
+
+            <AutoCompleteTextView
+                android:id="@+id/tagPeopleET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tagPerson"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15"
+                android:drawableStart="@drawable/ic_tag_people"
+                android:drawablePadding="@dimen/space7"
+                android:fontFamily="@font/lato"
+                android:hint="@string/tag"
+                android:maxLines="3"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:textColorHint="@color/black80"
+                android:textSize="@dimen/text16"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+            <!--<androidx.cardview.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/tagPeopleET"-->
+            <!--android:layout_marginStart="@dimen/space15"-->
+            <!--android:layout_marginEnd="@dimen/space15"-->
+            <!--app:cardCornerRadius="@dimen/space0"-->
+            <!--app:cardElevation="@dimen/space5">-->
+
+            <!--<androidx.recyclerview.widget.RecyclerView-->
+            <!--android:id="@+id/friendsListRC"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="gone">-->
+
+            <!--</androidx.recyclerview.widget.RecyclerView>-->
+
+            <!--</androidx.cardview.widget.CardView>-->
+
+            <EditText
+                android:id="@+id/privacySettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tagPeopleET"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15"
+                android:drawableStart="@drawable/ic_privacy_settings"
+                android:drawablePadding="@dimen/space7"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/lato"
+                android:hint="@string/privacy_settings"
+                android:padding="@dimen/space12"
+                android:textColor="@color/blackColor"
+                android:textColorHint="@color/black80"
+                android:textSize="@dimen/text16"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+            <RelativeLayout
+                android:id="@+id/allowCommentRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/privacySettings"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_allow_comment"
+                    android:drawablePadding="@dimen/space7"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/lato"
+                    android:padding="@dimen/space12"
+                    android:text="@string/allow_comments"
+                    android:textColorHint="@color/black80"
+                    android:textSize="@dimen/text16"
+                    tools:ignore="Autofill,LabelFor,TextFields" />
+
+                <Switch
+                    android:id="@+id/allowCommentSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/allowShareRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/allowCommentRL"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_allow_share"
+                    android:drawablePadding="@dimen/space7"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/lato"
+                    android:padding="@dimen/space12"
+                    android:text="@string/allow_share"
+                    android:textColorHint="@color/black80"
+                    android:textSize="@dimen/text16"
+                    tools:ignore="Autofill,LabelFor,TextFields" />
+
+                <Switch
+                    android:id="@+id/allowShareSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/allowSaveRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/allowShareRL"
+                android:layout_marginStart="@dimen/space15"
+                android:layout_marginTop="@dimen/space5"
+                android:layout_marginEnd="@dimen/space15">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_allow_save"
+                    android:drawablePadding="@dimen/space7"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/lato"
+                    android:padding="@dimen/space12"
+                    android:text="@string/allow_save"
+                    android:textColorHint="@color/black80"
+                    android:textSize="@dimen/text16"
+                    tools:ignore="Autofill,LabelFor,TextFields" />
+
+                <Switch
+                    android:id="@+id/allowSaveSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/postBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/allowSaveRL"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/space30"
+                android:background="@drawable/button_bg_blue"
+                android:fontFamily="@font/lato"
+                android:paddingStart="@dimen/space50"
+                android:paddingEnd="@dimen/space50"
+                android:text="@string/share_post"
+                android:textAllCaps="false"
+                android:textColor="@color/whiteColor"
+                android:textSize="@dimen/text16"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

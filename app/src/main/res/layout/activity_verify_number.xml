@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueColor"
+    android:orientation="vertical"
+    tools:context=".activities.VerifyNumberActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space80"
+        android:fontFamily="@font/lato"
+        android:text="@string/verification_code"
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/text20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space25"
+        android:fontFamily="@font/lato"
+        android:text="@string/please_type_the_verification_code_sent_to"
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/text16" />
+
+    <TextView
+        android:id="@+id/numberCodeSent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space12"
+        android:fontFamily="@font/lato"
+        android:text="@string/_919876543211"
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/text16" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space40"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/verifyOne"
+                android:layout_width="@dimen/space40"
+                android:layout_height="@dimen/space45"
+                android:background="@drawable/verify_et_bg"
+                android:cursorVisible="false"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:fontFamily="@font/lato"
+                android:textColor="@color/navyBlueColor"
+                android:textSize="@dimen/text24"
+                android:textStyle="bold"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/verifyTwo"
+                android:layout_width="@dimen/space40"
+                android:layout_height="@dimen/space45"
+                android:layout_marginStart="@dimen/space8"
+                android:background="@drawable/verify_et_bg"
+                android:cursorVisible="false"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/verifyOne"
+                android:fontFamily="@font/lato"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/navyBlueColor"
+                android:textSize="@dimen/text24"
+                android:textStyle="bold"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/verifyThree"
+                android:layout_width="@dimen/space40"
+                android:layout_height="@dimen/space45"
+                android:layout_marginStart="@dimen/space8"
+                android:background="@drawable/verify_et_bg"
+                android:cursorVisible="false"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/verifyTwo"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/navyBlueColor"
+                android:textSize="@dimen/text24"
+                android:textStyle="bold"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/verifyFour"
+                android:layout_width="@dimen/space40"
+                android:layout_height="@dimen/space45"
+                android:layout_marginStart="@dimen/space8"
+                android:fontFamily="@font/lato"
+                android:background="@drawable/verify_et_bg"
+                android:cursorVisible="false"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/verifyThree"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/navyBlueColor"
+                android:textSize="@dimen/text24"
+                android:textStyle="bold"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/verifyFive"
+                android:layout_width="@dimen/space40"
+                android:layout_height="@dimen/space45"
+                android:layout_marginStart="@dimen/space8"
+                android:fontFamily="@font/lato"
+                android:background="@drawable/verify_et_bg"
+                android:cursorVisible="false"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/verifyFour"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/navyBlueColor"
+                android:textSize="@dimen/text24"
+                android:textStyle="bold"
+                tools:ignore="Autofill,LabelFor" />
+
+            <EditText
+                android:id="@+id/verifySix"
+                android:layout_width="@dimen/space40"
+                android:layout_height="@dimen/space45"
+                android:layout_marginStart="@dimen/space8"
+                android:fontFamily="@font/lato"
+                android:background="@drawable/verify_et_bg"
+                android:cursorVisible="false"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/verifyFive"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/navyBlueColor"
+                android:textSize="@dimen/text24"
+                android:textStyle="bold"
+                tools:ignore="Autofill,LabelFor" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/timeLeftText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/space5"
+            android:fontFamily="@font/lato"
+            android:text="@string/_00_00"
+            android:textColor="@color/whiteColor"
+            android:textSize="@dimen/text14" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/verifyOTP"
+        android:layout_width="@dimen/space180"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space50"
+        android:background="@drawable/button_bg_white"
+        android:fontFamily="@font/lato"
+        android:text="@string/confirm"
+        android:textAllCaps="false"
+        android:textColor="@color/navyBlueColor"
+        android:textSize="@dimen/text16"
+        android:textStyle="bold" />
+
+</LinearLayout>

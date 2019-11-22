@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/deviceImagesRC"
+        android:layout_above="@+id/imagesBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.DeviceImagesActivity">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/imagesBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blueColor"
+        android:text="@string/next"
+        android:textColor="@color/whiteColor"
+        android:textSize="@dimen/text16"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/lato"
+        />
+
+</RelativeLayout>
